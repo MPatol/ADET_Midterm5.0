@@ -31,7 +31,7 @@ const createdept = async (req, res) => {
     const {dept_code, dept_name, user_id } = req.body;
 
     try {
-        const [result] = await pool.query('INSERT INTO departments (dept_code, dept_name, user_id) VALUES (?, ?, ?)', [dept_code,dept_name, user_id]);
+        const [result] = await pool.query('INSERT INTO dept (dept_code, dept_name, user_id) VALUES (?, ?, ?)', [dept_code,dept_name, user_id]);
         res.status(201).json({ id: result.insertId, dept_code, dept_name, user_id});
 
     }catch (err) {
