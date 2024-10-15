@@ -35,7 +35,7 @@ const createdept = async (req, res) => {
     }
 
     try {
-        const [result] = await pool.query('INSERT INTO dept (dept_id, dept_code, dept_name, user_id) VALUES ( ?, ?, ?)', [depts_id, dept_code, dept_name, user_id ]);
+        const [result] = await pool.query('INSERT INTO dept (dept_id, dept_code, dept_name, user_id) VALUES ( ?, ?, ?)', [dept_id, dept_code, dept_name, user_id ]);
         res.status(201).json({ id: result.insertId, dept_id, dept_code, dept_name, user_id }); // Removed password from response
     } catch (err) {
         res.status(500).json({ error: 'Failed to create user.' });
