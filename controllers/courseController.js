@@ -31,7 +31,7 @@ const createcourse = async (req, res) => {
     const {course_code, course_name, dept_id, user_id } = req.body;
 
     try {
-        const [result] = await pool.query('INSERT INTO course (course_code, course_name, dept_id, user_id) VALUES (?, ?, ?)', [course_code,course_name, dept_id, user_id]);
+        const [result] = await pool.query('INSERT INTO course (course_code, course_name, dept_id, user_id) VALUES (?, ?, ?, ?)', [course_code,course_name, dept_id, user_id]);
         res.status(201).json({ id: result.insertId, course_code, course_name, dept_id, user_id});
 
     }catch (err) {
