@@ -35,7 +35,7 @@ const createstudent = async (req, res) => {
     }
 
     try {
-        const [result] = await pool.query('INSERT INTO student (fname, lname, mname, course_id, user_id) VALUES ( ?, ?, ?)', [fname, lname, mname, course_id, user_id ]);
+        const [result] = await pool.query('INSERT INTO student (fname, lname, mname, course_id, user_id) VALUES ( ?, ?, ?, ?, ?)', [fname, lname, mname, course_id, user_id ]);
         res.status(201).json({ id: result.insertId, fname, lname, mname, course_id, user_id }); // Removed password from response
     } catch (err) {
         res.status(500).json({ error: 'Failed to create user.' });
