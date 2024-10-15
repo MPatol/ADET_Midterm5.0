@@ -24,7 +24,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/user', userRoutes);
 app.use('/api/dept', deptRoutes); // Use deptRoutes
 app.use('/api/course', courseRoutes);
-app.use('/api/course', studentRoutes);
+app.use('/api/student', studentRoutes);
 
 // Start the server
 const PORT = 5000;
