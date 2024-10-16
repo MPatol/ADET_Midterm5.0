@@ -23,6 +23,7 @@ const getdeptById = async (req, res) => {
 
         res.json(rows[0]);
     } catch (err) {
+        console.error('Error fetching user:', err);
         res.status(500).json({ error: 'Failed to fetch user.' });
     }
 };
