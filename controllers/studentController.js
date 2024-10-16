@@ -31,7 +31,7 @@ const createstudent = async (req, res) => {
     const {lname, fname, mname, course_id, user_id } = req.body;
 
     try {
-        const [result] = await pool.query('INSERT INTO course (lname, fname, mname, course_id, user_id) VALUES (?, ?, ?, ?, ?)', [lname, fname, mname, course_id, user_id]);
+        const [result] = await pool.query('INSERT INTO student (lname, fname, mname, course_id, user_id) VALUES (?, ?, ?, ?, ?)', [lname, fname, mname, course_id, user_id]);
         res.status(201).json({ id: result.insertId, lname, fname, mname, course_id, user_id});
 
     }catch (err) {
